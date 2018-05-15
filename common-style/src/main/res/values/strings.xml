@@ -1,0 +1,10 @@
+<resources>
+    <string name="cancel">取消</string>
+    <string name="live_send_gift">send</string>
+
+    <string name="pay_by_coins">金币支付</string>
+    <string name="pay_by_we_chat">微信支付</string>
+    <string name="pay_by_ali_pay">支付宝支付</string>
+    <string name="payment_by_pay_pal" translatable="false">PayPal</string>
+
+</resources>

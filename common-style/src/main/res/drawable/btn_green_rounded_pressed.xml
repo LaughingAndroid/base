@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+       android:insetBottom="@dimen/btn_inset_vertical"
+       android:insetLeft="@dimen/btn_inset_horizontal"
+       android:insetRight="@dimen/btn_inset_horizontal"
+       android:insetTop="@dimen/btn_inset_vertical"
+    >
+    <shape>
+        <corners android:radius="24dp"/>
+        <solid android:color="@color/echo_dark_green"/>
+    </shape>
+</inset>

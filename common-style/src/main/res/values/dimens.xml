@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="alert_width">290dp</dimen>
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="progress_circle_radius">34dp</dimen>
+    <dimen name="btn_inset_vertical">6dp</dimen>
+    <dimen name="btn_inset_horizontal">8dp</dimen>
+
+    <dimen name="dip15">15dp</dimen>
+    <dimen name="dip10">10dp</dimen>
+    <dimen name="dip5">5dp</dimen>
+    <dimen name="dp">1dp</dimen>
+    <dimen name="delete_edittext_init_min_w_h">18dp</dimen>
+
+    <dimen name="textsize_max">18sp</dimen>
+    <dimen name="textsize_">17sp</dimen>
+    <dimen name="textsize_title">15.5sp</dimen>
+    <dimen name="textsize">14.5sp</dimen>
+    <dimen name="textsize_mid">12.5sp</dimen>
+    <dimen name="textsize_min">11.5sp</dimen>
+    <dimen name="textsize_minx">10.5sp</dimen>
+    <dimen name="bar_height">48dp</dimen>
+    <dimen name="bar_height_min">48dp</dimen>
+    <dimen name="button_height">45dp</dimen>
+    <dimen name="top_orange_line">70dp</dimen>
+    <dimen name="line_height">0.8dp</dimen>
+    <dimen name="et_height">45dp</dimen>
+    <dimen name="et_height1">40dp</dimen>
+
+    <dimen name="icon_min">45dp</dimen>
+    <dimen name="icon_min_h">22.5dp</dimen>
+    <dimen name="icon_mid_h">35dp</dimen>
+    <dimen name="icon">60dp</dimen>
+    <dimen name="list_item_height">68dp</dimen>
+    <dimen name="list_item_height_min">60dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="padding_mid">12dp</dimen>
+    <dimen name="padding_max">16dp</dimen>
+    <dimen name="drawable_padding">4dp</dimen>
+
+    <dimen name="echo_tag_half_height">14dp</dimen>
+    <dimen name="echo_tag_height">28dp</dimen>
+
+
+</resources>
