@@ -1,1 +1,2 @@
-include ':app',':base',':sweet-dialog',':materialish-progress',':common-utils',':common-style'
+include ':base',':plugin'
+// ,':sweet-dialog',':materialish-progress',':common-utils',':common-style',

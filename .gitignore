@@ -19,3 +19,4 @@ app/src/main/assets/app
 app/src/main/assets/strings.json
 test*.sh
 reports/*
+plugin

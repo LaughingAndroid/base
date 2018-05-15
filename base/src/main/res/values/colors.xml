@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="echo_bg">#f4f4f4</color>
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="error_stroke_color">#F0697C</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="text_color">#575757</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
 
+    <color name="white">#ffffff</color>
+    <color name="color_top_bar_bg">#f0f0f0</color>
+    <color name="black">#000000</color>
+    <color name="blue">#4eb8c5</color>
+    <color name="line">#DADADA</color>
+    <color name="red">#ff0000</color>
+    <color name="purple">#3914af</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+
+    <!-- 蓝色字体颜色 -->
+    <color name="text_color_blue">#4A90E2</color>
+    <!-- like文字红色-->
+    <color name="echo_red_text">#F0697C</color>
+
+    <!-- 深绿变色后颜色-->
+    <color name="echo_dark_green_dark">#009405</color>
+
+    <!-- 浅绿变色后颜色-->
+    <color name="echo_mid_green_dark">#6EB51C</color>
+    <color name="echo_divider_line">#e8e8e8</color>
+
+    <color name="titlestrip_background_color">#DEDEDE</color>
+    <color name="avatar_bg">#E8E8E8</color>
+
+    <color name="line_light">#a0e2e2e2</color>
+
+    <color name="echo_bg">#f4f4f4</color>
+    <!-- 品牌绿色 -->
+    <color name="brand_color_green">@color/echo_green</color>
+    <color name="brand_color_green_dark">@color/echo_dark_green</color>
+    <color name="edit_gray_stroke">#cccccc</color>
+    <color name="btn_green_default">@color/echo_green</color>
+    <color name="btn_green_pressed">@color/echo_dark_green</color>
+    <!-- 青色 -->
+    <color name="text_color_cyan">#6CD5C2</color>
+    <color name="echo_bg_color_E8E8E8">#E8E8E8</color>
+    <color name="ugc_blue">#21BF8E</color>
+    <color name="main_page_tab_green">#00D880</color>
+    <color name="unselect_bg">#f8f8f8</color>
 </resources>
