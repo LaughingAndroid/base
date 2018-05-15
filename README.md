@@ -1,3 +1,4 @@
+```
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -34,3 +35,5 @@ dependencies {
     // recycle view divider库 https://github.com/yqritc/RecyclerView-FlexibleDivider
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.9'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+```
