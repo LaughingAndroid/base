@@ -7,7 +7,7 @@ import com.kibey.android.utils.FilePathManager;
 import com.kibey.android.utils.FileUtils;
 import com.kibey.android.utils.Md5Util;
 import com.kibey.android.utils.WebUtils;
-import com.kibey.lib.PluginApkManager;
+import com.kibey.android.lib.PluginApkManager;
 
 import rx.Subscriber;
 

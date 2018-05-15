@@ -18,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kibey.plugin.R;
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.List;
 

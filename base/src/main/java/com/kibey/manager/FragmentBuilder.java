@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.kibey.proxy.ui.FragmentBuilderProxy;
-import com.kibey.lib.PluginInvocationHandler;
+import com.kibey.android.lib.PluginInvocationHandler;
 
 public class FragmentBuilder implements FragmentBuilderProxy {
     private static FragmentBuilder instance = null;

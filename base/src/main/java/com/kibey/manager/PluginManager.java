@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.kibey.android.utils.AppProxy;
-import com.kibey.lib.PluginApkManager;
-import com.kibey.lib.PluginConfig;
+import com.kibey.android.lib.PluginApkManager;
+import com.kibey.android.lib.PluginConfig;
 
 import rx.Observable;
 import rx.Subscriber;

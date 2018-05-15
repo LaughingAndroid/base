@@ -1,4 +1,4 @@
-package com.kibey.lib;
+package com.kibey.android.lib;
 
 import android.content.Context;
 import android.view.View;

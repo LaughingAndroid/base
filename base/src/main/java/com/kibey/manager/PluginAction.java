@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.kibey.android.utils.JsonUtils;
 import com.kibey.android.utils.StringUtils;
-import com.kibey.lib.PluginConfig;
+import com.kibey.android.lib.PluginConfig;
 
 import java.net.URLDecoder;
 

@@ -27,7 +27,7 @@ import com.kibey.android.utils.AppProxy;
 import com.kibey.android.utils.Logs;
 import com.kibey.manager.ImageManager;
 import com.kibey.proxy.image.ImgLoadListener;
-import com.kibey.lib.PluginApkManager;
+import com.kibey.android.lib.PluginApkManager;
 
 import java.lang.reflect.Constructor;
 

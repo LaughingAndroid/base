@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.kibey.proxy.image.ImageProxy;
 import com.kibey.proxy.image.ImgLoadListener;
-import com.kibey.lib.PluginInvocationHandler;
+import com.kibey.android.lib.PluginInvocationHandler;
 
 import java.io.File;
 

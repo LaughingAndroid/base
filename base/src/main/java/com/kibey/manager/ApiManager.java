@@ -2,7 +2,7 @@ package com.kibey.manager;
 
 
 import com.kibey.proxy.api.ApiProxy;
-import com.kibey.lib.PluginInvocationHandler;
+import com.kibey.android.lib.PluginInvocationHandler;
 
 public class ApiManager implements ApiProxy {
     private static ApiManager instance = null;

@@ -1,4 +1,4 @@
-package com.kibey.lib;
+package com.kibey.android.lib;
 
 import android.content.Intent;
 import android.graphics.Color;

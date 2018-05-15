@@ -1,4 +1,4 @@
-package com.kibey.lib;
+package com.kibey.android.lib;
 
 /**
  *  by liyihang

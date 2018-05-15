@@ -3,7 +3,6 @@ package cn.pedant.SweetAlert;
 import android.content.Context;
 
 import com.kibey.plugin.R;
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class ProgressHelper {
     private ProgressWheel mProgressWheel;

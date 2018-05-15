@@ -1,4 +1,4 @@
-package com.pnikosis.materialishprogress;
+package cn.pedant.SweetAlert;
 
 import android.annotation.TargetApi;
 import android.content.Context;
