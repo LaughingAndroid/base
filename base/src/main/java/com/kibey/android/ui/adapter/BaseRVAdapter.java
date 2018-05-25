@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.kibey.android.app.IContext;
 import com.kibey.android.data.model.Model;
 import com.kibey.android.utils.AppProxy;
-import com.kibey.android.utils.DialogUtils;
 import com.kibey.android.utils.IClear;
 import com.kibey.android.utils.ListUtils;
 import com.kibey.android.utils.Logs;
@@ -21,8 +20,6 @@ import com.kibey.android.utils.Logs;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 import static com.kibey.android.utils.Logs.timeConsuming;
 import static java.lang.System.currentTimeMillis;
@@ -143,7 +140,6 @@ public class BaseRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             e.printStackTrace();
             if (Logs.IS_DEBUG) {
                 Logs.printCallStatck(vh + " BaseRvAdapter build失败 ");
-                DialogUtils.show(vh.getSimpleName() + " build失败,检查publish和构造函数 \n" + e.toString(), SweetAlertDialog.ERROR_TYPE);
             }
         }
         return null;
