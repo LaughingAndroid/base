@@ -56,7 +56,7 @@ import static java.lang.System.currentTimeMillis;
  *
  * @param <DATA>
  */
-public class SuperViewHolder<DATA> extends RecyclerView.ViewHolder implements IHolder<DATA>, BaseRVAdapter.IHolderCreator {
+public class SuperViewHolder<DATA> extends RecyclerView.ViewHolder implements IHolder<DATA>, BaseRVAdapter.IHolderCreator, ListenerView.ISuperHolderWindowStatus {
     public static final Context APP = AppProxy.getApp();
     private ViewGroup EMPTY;
 
@@ -85,6 +85,21 @@ public class SuperViewHolder<DATA> extends RecyclerView.ViewHolder implements IH
         if (itemView != EMPTY) {
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    protected void addListenerView() {
+        if (itemView instanceof ViewGroup) {
+            ListenerView listenerView = new ListenerView(itemView.getContext(), this);
+            ((ViewGroup) itemView).addView(listenerView);
+            listenerView.getLayoutParams().width = 0;
+            listenerView.getLayoutParams().height = 0;
+        }
+    }
+
+    @Override
+    public void onSuperHolderWindowStatusChange(boolean isAttachedToWindow, boolean hasWindowFocus) {
+        Logs.d(mVolleyTag, "ListenerView onAttachedToWindow:" + isAttachedToWindow + " hasWindowFocus:" + hasWindowFocus);
+
     }
 
     public DATA getData() {

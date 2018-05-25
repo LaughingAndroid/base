@@ -1,13 +1,21 @@
 package com.kibey.manager;
 
+import android.net.Uri;
+import android.os.Bundle;
+
 import com.kibey.android.data.model.Model;
 import com.kibey.android.utils.AppProxy;
 import com.kibey.android.utils.FileMd5;
 import com.kibey.android.utils.FilePathManager;
 import com.kibey.android.utils.FileUtils;
+import com.kibey.android.utils.JsonUtils;
 import com.kibey.android.utils.Md5Util;
+import com.kibey.android.utils.StringUtils;
 import com.kibey.android.utils.WebUtils;
 import com.kibey.lib.PluginApkManager;
+import com.kibey.lib.PluginConfig;
+
+import java.net.URLDecoder;
 
 import rx.Subscriber;
 

@@ -6,13 +6,15 @@ import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kibey.android.data.model.IKeepProguard;
+
 import java.io.File;
 
 /**
  * by liyihang
  * blog http://sijienet.com/
  */
-public interface ImageProxy {
+public interface ImageProxy extends IKeepProguard {
     Bitmap loadImageSync(String url);
 
     void loadImage(Uri url, ImageView iv);

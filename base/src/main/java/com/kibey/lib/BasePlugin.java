@@ -11,18 +11,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kibey.android.app.IContext;
+import com.kibey.android.data.model.SuperHolderData;
+import com.kibey.android.ui.adapter.BaseRVAdapter;
 import com.kibey.proxy.ui.IToolbar;
 
 import java.util.List;
+
+import rx.Observable;
 
 /**
  * by liyihang
  * blog http://sijienet.com/
  */
-public abstract class BasePlugin implements PluginBaseInterface {
+public abstract class BasePlugin implements PluginBaseInterface, ILoadData {
     protected static String TAG;
 
     protected IContext mContext;
+    private BaseRVAdapter mAdapter;
 
     protected IContext getContext() {
         return mContext;
@@ -39,9 +44,14 @@ public abstract class BasePlugin implements PluginBaseInterface {
         TAG = getClass().getName();
         this.mContext = activity;
         this.mPluginName = pluginName;
-        ViewGroup view = (ViewGroup) PluginApkManager.inflate(mPluginName, getLayoutId(contentLayoutRes()), null);
+        ViewGroup view = (ViewGroup) PluginApkManager.inflate(mPluginName, contentLayoutRes(), null);
         onViewCreated(view);
         return view;
+    }
+
+    @Override
+    public void buildAdapterHolder(RecyclerView view, BaseRVAdapter adapter) {
+        mAdapter = adapter;
     }
 
     public void onViewCreated(View view) {
@@ -134,11 +144,36 @@ public abstract class BasePlugin implements PluginBaseInterface {
     }
 
     @Override
-    public String contentLayoutRes() {
-        return "layout_base_list";
+    public int contentLayoutRes() {
+        return getLayoutId("layout_base_list");
     }
 
     public int getLayoutId(String name) {
         return PluginApkManager.getPluginApp(mPluginName).getResources().getIdentifier(name, "layout", mPluginName);
+    }
+
+    @Override
+    public ILoadData getLoadDataImp() {
+        return this;
+    }
+
+    /**
+     * {@link ILoadData}
+     *
+     * @return
+     */
+    @Override
+    public Observable<SuperHolderData> loadSuperHolderData() {
+        return null;
+    }
+
+    @Override
+    public Observable<List> loadData() {
+        return null;
+    }
+
+    @Override
+    public BaseRVAdapter getAdapter() {
+        return mAdapter;
     }
 }

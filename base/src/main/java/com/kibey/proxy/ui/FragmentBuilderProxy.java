@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.kibey.android.data.model.IKeepProguard;
+
 /**
  * @author mchwind
  * @version V1.0
@@ -13,6 +15,6 @@ import android.support.v4.app.Fragment;
  * |      |_|   |   |   |  `|  |---|    |   | \ |   |  `|
  * |___  |   |   |_|     \_/   |   |   ___  |  \|    \_/
  */
-public interface FragmentBuilderProxy {
+public interface FragmentBuilderProxy extends IKeepProguard {
     Fragment create(Context context, String pluginName, String page, Bundle bundle);
 }

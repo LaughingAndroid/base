@@ -385,6 +385,7 @@ public class BaseRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     private HolderBuilderUtils getCurrentBuilderUtils() {
+        ensureUtils();
         return mCurrentBuilder;
     }
 
@@ -485,6 +486,10 @@ public class BaseRVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public void setViewTypeProvider(ViewTypeProvider viewTypeProvider) {
         mViewTypeProvider = viewTypeProvider;
+    }
+
+    public void clearBuildHolder() {
+        getCurrentBuilderUtils().clear();
     }
 
     public static class BaseViewHolder<DATA> extends SuperViewHolder<DATA> {

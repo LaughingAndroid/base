@@ -12,8 +12,6 @@ import com.kibey.proxy.ui.IToolbar;
 
 import java.util.List;
 
-import rx.Observable;
-
 /**
  * by liyihang
  * blog http://sijienet.com/
@@ -46,7 +44,7 @@ public interface PluginBaseInterface {
 
     void buildAdapterHolder(RecyclerView view, BaseRVAdapter adapter);
 
-    Observable<List> loadData();
+    ILoadData getLoadDataImp();
 
     int getToolbarFlags();
 
@@ -60,5 +58,5 @@ public interface PluginBaseInterface {
 
     RecyclerView.LayoutManager buildLayoutManager();
 
-    String contentLayoutRes();
+    int contentLayoutRes();
 }

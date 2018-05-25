@@ -59,7 +59,7 @@ public class PluginAction {
     }
 
     public void setPluginApk(PluginApk pluginApk) {
-        this.pluginApk = pluginApk;
+        pluginApk = pluginApk;
     }
 
     public PluginApk getPluginApk() {
@@ -69,18 +69,14 @@ public class PluginAction {
     public static class Builder {
         public static PluginAction build(String url) {
             Uri uri = Uri.parse(URLDecoder.decode(url));
-            String s = uri.getScheme();
+            String s = uri.getHost();
             if (PluginConfig.SCHEME.equals(s)) {
                 PluginApk pluginApk = new PluginApk();
                 // todo check plugin installed
                 int type = StringUtils.parseInt(uri.getQueryParameter("type"));
                 String page = uri.getQueryParameter("page");
-                String pluginUrl = uri.getQueryParameter("plugin_url");
-                String md5 = uri.getQueryParameter("md5");
                 String package_name = uri.getQueryParameter("package_name");
                 pluginApk.setPackage_name(package_name);
-                pluginApk.setUrl(pluginUrl);
-                pluginApk.setMd5(md5);
                 PluginAction action = new PluginAction();
                 action.setPage(page);
                 action.setType(type);

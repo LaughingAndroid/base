@@ -13,12 +13,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kibey.plugin.R;
 import com.kibey.android.app.IContext;
+import com.kibey.android.data.model.SuperHolderData;
 import com.kibey.android.ui.adapter.BaseRVAdapter;
 import com.kibey.android.ui.adapter.SuperViewHolder;
 import com.kibey.android.utils.shake.IRegisterDebugMethod;
+import com.kibey.plugin.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,19 +31,52 @@ import rx.Observable;
  * by liyihang
  * blog http://sijienet.com/
  */
-public  abstract class PluginClientBaseActivity extends AppCompatActivity implements IContext, BaseRVAdapter.IHolderItemClick<SuperViewHolder>, IRegisterDebugMethod {
+public abstract class PluginClientBaseActivity extends AppCompatActivity implements IContext, BaseRVAdapter.IHolderItemClick<SuperViewHolder>, IRegisterDebugMethod {
     private PluginBaseInterface proxyClass;
     private Bundle mSavedInstanceState;
     RecyclerView mRecyclerView;
     BaseRVAdapter mAdapter;
     private ViewGroup mContentView;
+    private SuperHolderData mSuperHolderData;
 
     public void buildAdapterHolder() {
         if (proxyClass != null) {
             proxyClass.buildAdapterHolder(mRecyclerView, mAdapter);
-            Observable<List> ob = proxyClass.loadData();
-            if (null != ob) {
-                ob.subscribe(list -> {
+            ILoadData loadDataImp = proxyClass.getLoadDataImp();
+            Observable<List> loadData = loadDataImp.loadData();
+            BaseRVAdapter adapter = loadDataImp.getAdapter();
+
+            if (null != loadData) {
+                loadData.subscribe(list -> {
+                    setData(0, list);
+                });
+            } else {
+                loadDataImp.loadSuperHolderData().map(superHolderData -> {
+                    mSuperHolderData = superHolderData;
+                    if (null != mSuperHolderData && adapter != null) {
+                        adapter.clearBuildHolder();
+                        List<SuperHolderData.HolderInfo> holders = mSuperHolderData.getHolder_info();
+                        for (SuperHolderData.HolderInfo holder : holders) {
+                            String model = holder.getModel();
+                            Class holderClass = SuperHolderData.getClassByName(holder.getPlugin(), holder.getHolder());
+                            if (null != holderClass) {
+                                adapter.build(model, holderClass);
+                            }
+                        }
+                    }
+
+                    List list = new ArrayList();
+                    if (null != superHolderData) {
+                        List<SuperHolderData.DataInfo> dataInfoList = superHolderData.getData_info();
+                        if (null != dataInfoList) {
+                            for (SuperHolderData.DataInfo item : dataInfoList) {
+                                list.add(item.modelInstance());
+                            }
+                        }
+                    }
+
+                    return list;
+                }).subscribe(list -> {
                     setData(0, list);
                 });
             }
@@ -53,14 +88,6 @@ public  abstract class PluginClientBaseActivity extends AppCompatActivity implem
         if (proxyClass != null) {
             proxyClass.setData(page, list);
         }
-    }
-
-    public Observable<List> loadData() {
-        Observable<List> ob = proxyClass.loadData();
-        if (ob == null) {
-            return Observable.empty();
-        }
-        return ob;
     }
 
     @Override

@@ -11,11 +11,6 @@ import com.kibey.android.utils.AppProxy;
 import com.kibey.lib.PluginApkManager;
 import com.kibey.lib.PluginConfig;
 
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-
 /**
  * @author mchwind
  * @version V1.0
@@ -26,49 +21,33 @@ import rx.schedulers.Schedulers;
  * |___  |   |   |_|     \_/   |   |   ___  |  \|    \_/
  */
 public class PluginManager {
-    public static rx.Observable<PluginAction> open(String url) {
+    public static PluginAction open(String url) {
         Context context = AppProxy.getApp();
         PluginAction action = PluginAction.Builder.build(url);
-        if (action != null && null != action.getPluginApk()) {
-            return action.getPluginApk().install()
-                    .flatMap(flag -> open(context, flag, action))
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread());
-        }
-        return Observable.just(null);
-    }
 
-    private static Observable<PluginAction> open(Context context, boolean install, final PluginAction action) {
-        if (!install) {
-            return Observable.just(null);
-        }
-        return rx.Observable.create(new Observable.OnSubscribe<PluginAction>() {
-            @Override
-            public void call(Subscriber<? super PluginAction> subscriber) {
-                PluginApk plugin = action.getPluginApk();
-                switch (action.getType()) {
-                    case PluginConfig.URI_TYPE_ACTIVITY:
-                        goActivity(AppProxy.getApp(), plugin.getPackage_name(), action.page);
-                        break;
+        if (action != null) {
+            PluginApk plugin = action.getPluginApk();
+            switch (action.getType()) {
+                case PluginConfig.URI_TYPE_ACTIVITY:
+                    goActivity(AppProxy.getApp(), plugin.getPackage_name(), action.page);
+                    break;
 
-                    case PluginConfig.URI_TYPE_FRAGMENT:
-                        Fragment fragment = newFragment(context, plugin.getPackage_name(), action.page, action.bundle);
-                        action.setResult(fragment);
-                        break;
+                case PluginConfig.URI_TYPE_FRAGMENT:
+                    Fragment fragment = newFragment(context, plugin.getPackage_name(), action.page, action.bundle);
+                    action.setResult(fragment);
+                    break;
 
-                    case PluginConfig.URI_TYPE_CLASS:
-                        Class clazz = getClassId(plugin.getPackage_name(), action.page);
-                        action.setResult(clazz);
+                case PluginConfig.URI_TYPE_CLASS:
+                    Class clazz = getClassId(plugin.getPackage_name(), action.page);
+                    action.setResult(clazz);
 
-                        break;
+                    break;
 
-                    default:
-                        break;
-                }
-                subscriber.onNext(action);
-                subscriber.onCompleted();
+                default:
+                    break;
             }
-        });
+        }
+        return action;
     }
 
     public static void goActivity(Context context, String plugin, String className) {

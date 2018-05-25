@@ -42,6 +42,4 @@ dependencies {
     // view注解
     compile 'com.jakewharton:butterknife:8.0.1'
     compile 'com.jakewharton:butterknife-compiler:8.0.1'
-    compile project(':common-utils')
-    compile project(':common-style')
 }

@@ -1,1 +1,1 @@
-include ':app',':base',':sweet-dialog',':materialish-progress',':common-utils',':common-style'
+include ':app',':base'
