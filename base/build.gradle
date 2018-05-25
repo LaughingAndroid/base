@@ -41,8 +41,30 @@ dependencies {
     compile "io.reactivex:rxandroid:$rootProject.rxAndroidVersion"
     // view注解
     compile 'com.jakewharton:butterknife:8.0.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.jakewharton:butterknife-compiler:8.0.1'
 
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:gridlayout-v7:$rootProject.supportLibraryVersion"
+
+    // recycle view divider库 https://github.com/yqritc/RecyclerView-FlexibleDivider
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.9'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+}
+
+
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'mchwind'
+    groupId = 'com.kibey'
+    artifactId = 'plugin'
+    publishVersion = '0.0.3'
+    desc = 'test'
+    website = 'https://github.com/LaughingAndroid/base'
+    repoName = 'kblib'
 }
