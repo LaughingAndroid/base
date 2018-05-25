@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PluginAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">#00AE05</item>
+        <item name="android:typeface">normal</item>
+        <item name="buttonStyle">@style/PluginButton</item>
+        <item name="android:buttonStyle">@style/PluginButton</item>
+    </style>
+
+    <style name="PluginButton" parent="Widget.AppCompat.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

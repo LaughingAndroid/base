@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.kibey.android.app.IContext;
+import com.kibey.android.utils.Logs;
+import com.kibey.plugin.R;
 
 import dalvik.system.DexClassLoader;
 
@@ -43,8 +45,8 @@ public class PluginApkHelperInterfaceImp implements PluginApkHelperInterface {
 
         resources = PluginUtils.readApkRes(context, apkPath);
         this.theme = context.getTheme();
-//        Logs.d(TAG, "app KibeyAppTheme:" + R.style.KibeyAppTheme + " plugin:" + resources.getIdentifier("KibeyAppTheme", "style", packageInfo.packageName));
-//        this.theme.applyStyle(resources.getIdentifier("KibeyAppTheme", "style", packageInfo.packageName), false);
+        Logs.d(TAG, "app KibeyAppTheme:" + R.style.PluginAppTheme + " plugin:" + resources.getIdentifier("KibeyAppTheme", "style", packageInfo.packageName));
+        this.theme.applyStyle(resources.getIdentifier("PluginAppTheme", "style", packageInfo.packageName), false);
         dexClassLoader = PluginUtils.readDexFile(context, apkPath, dexOutPath);
     }
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="PluginAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">#00AE05</item>
+        <item name="android:typeface">normal</item>
+        <item name="buttonStyle">@style/Button</item>
+        <item name="android:buttonStyle">@style/Button</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+    </style>
+</resources>
